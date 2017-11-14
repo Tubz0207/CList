@@ -1,63 +1,32 @@
-#include<iostream>
-#include<string>
-#include "List.h"
-using namespace std;
+#ifndef QUEUE_H
+#define QUEUE_H
 
-class Queue
-{
-public:
-	Queue::Queue(List k)
-	{
-		k.List();
-}
+#include <stdio.h>
+#include "CircularLinkList.h"
 
-	void Queue::~Queue()
-	{
-		if (k.size() != k.isEmpty())
-		{
-			k.destroy();
-		}
-}
 
-	int Queue::isEmpty()
-	{
-		if (k.size() == 0)
-		{
-			return k.size();
-		}
-		else 
-			return -1;
-}
-
-	char Queue::front()
-	{
-		if (k.size() != 0)
-		{
-			k.front();
-		}
-	}
-	char Queue::back()
-	{
-		if (k.rear() != 0)
-		{
-			k.rear();
-		}
-	}
-	void Queue::enqueue(k)
-	{
-		int o = 0;
-		k.InsertatAnt(char c,int o);
-		o++;
-	}
-	void Queue::dequeue()
-	{
-		k.delete_ele();
-	}
-
+class Queue {
 private:
-	int maxQueueSize;
-	int count;
-	int queueFront;
-	int queueRear;
-	List k = {};
-}
+	CList List;
+
+public:
+	//~Queue();
+	int size(); //tells you the number of items in the ADT
+
+	void enqueue(char o); //inserts item at the back of queue
+
+	void dequeue(char num); //removes an item from the front of the queue
+
+	bool isEmpty(); //checks to see if ADT is empty
+
+	char front(); //tells us the element at the front of the queue without removing it
+
+	char back(); // tells us the element at the back of the queue without removing it
+
+	void clear(); //makes the ADT empty
+
+	int displayQueue(); // Displays items in queue
+
+};
+
+#endif 
